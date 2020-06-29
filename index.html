@@ -7,7 +7,47 @@
     <title>To Do List</title>
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    
+    <header>
+        <h1 class="title">Practica 1 - Todo List</h1>
+    </header>
+
+    <!-- Para mostrar un error o alerta -->
+    <div id="alerta"></div>
+    <main class="main">
+        <form class="formulario" id="formulario">
+            <h1 class="form-title">Nueva Tarea</h1>
+            
+            <div class="form-input-group">
+                <label class="form-label">Nombre Tarea</label>
+                <input type="text" class="form-input" placeholder="Nombre Tarea" id="task">
+            </div>
+
+            <div class="form-input-group">
+                <label class="form-label">Fecha</label>
+                <input type="datetime-local" class="form-input" id="date">
+            </div>
+
+            <div class="form-input-group">
+                <label class="form-label">Importancia</label>
+                <button class="form-input-color" id="low">Baja</button>
+                <button class="form-input-color" id="medium">Media</button>
+                <button class="form-input-color" id="high">Alta</button>
+            </div>
+
+            <div class="form-input-group">
+                <input type="submit" class="form-submit" value="Agregar Tarea">
+            </div>
+        </form>
+
+        <div class="tasks-container">
+            <h1 class="title"> Tareas</h1>
+            <ul class="tasks" id="tasks">
+
+            </ul>
+        </div>
+    </main>
+
     <script src="js/script.js"></script>
 </body>
 </html>
