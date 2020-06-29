@@ -73,6 +73,9 @@ const agregarTarea = e => {
     crearTarea(nuevaTarea, clase);
 
     form.reset();
+
+    // Añade la tarea a LocalStorage
+    agregarLocalStorage(nuevaTarea);
 }
 
 
@@ -84,7 +87,7 @@ const crearTarea = (tarea, clase) => {
                 tareaNueva.setAttribute('data-tarea-id', tarea.id);
                 tareaNueva.innerHTML = `
                     <p class="task-title">${tarea.nombre}</p>
-                    <p class="task-format">fecha establecida</p>
+                    <p class="task-format"><pre>   Año Mes Día Hr min</pre></p>
                     <p class="task-date">${tarea.fecha}<p>                                        
                 `;               
                 const boton = document.createElement('button')
@@ -115,6 +118,7 @@ const borrarTarea = e => {
     
 }
 
+// Elimina la tarea de la lista
 const borrarTareaLocalStorage = id => {
     tareas = obtenerLocalStorage();
     tareasNuevas = tareas.filter(tar => tar.id !== id)
