@@ -173,5 +173,7 @@ button_high.addEventListener('click', e => {
 })
 
 form.addEventListener('submit', agregarTarea );
-
+document.addEventListener('DOMContentLoaded', (e) =>{
+    contenidoLocalStorage();
+})
 
