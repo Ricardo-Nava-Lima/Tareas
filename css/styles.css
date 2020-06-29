@@ -143,7 +143,8 @@ h1, p{
 }
 
 .task-date,
-.task-format{
+.task-format,
+.footer-input-color{
     opacity: .7;
 }
 .tarea-borrar{
