@@ -1,0 +1,115 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, p{
+    color: #0f0c29;
+}
+
+.title,
+.tasks-title{
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+/*  ESTILOS PARA EL FORMULARIO */
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.form-title{
+    text-align: center;
+    margin-top: 0;
+    color: #292947;
+}
+
+.form-input-group{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+.form-label{
+    flex: 0 0 50%;
+    margin-bottom: 5px;
+    color: #292947;
+}
+
+.form-label:last-of-type{
+    flex: 0 0 100%;
+}
+
+.form-input{
+    flex: 1 1 100%;
+    border: 1px solid #e3e3e3;
+    padding: .8rem;
+    outline: none;
+}
+
+.form-input-color{
+    flex: 1;
+    padding: 1rem;
+    margin-right: 35px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.form-input-color:first-of-type, 
+.low{
+    background-color: rgb(184, 179, 179);
+    border: 1px solid gray;
+    color: dimgray;
+}
+
+.form-input-color:nth-of-type(2),
+.medium{
+    background-color: rgb(245, 245, 149);
+    border: 1px solid yellow;
+    color: darkorange;
+}
+
+.form-input-color:last-of-type,
+.high{
+    background-color: rgb(255, 152, 152);
+    border: 1px solid red;
+    color: darkred;
+}
+
+.form-submit{
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    background-color: #373e9f;
+    color: #fff;
+    padding: 1rem;
+    outline: none;
+    transition: background-color 1s ease;
+}
