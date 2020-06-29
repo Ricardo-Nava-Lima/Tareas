@@ -43,20 +43,85 @@ const agregarTarea = e => {
         return;
     }
 
+    let importancia;
+    let clase;
+    if( !baja || !media || !alta){ 
+        importancia = 'low';
+        clase = 'low';
+    }
+    if (media){ 
+        importancia = 'medium';
+        clase = 'medium';
+    }
+    else if (alta){
+        importancia = 'high';
+        clase = 'high';
+    }
+
      // Genera un id único
     const ID = Math.random().toString(36).substr(2, 9).toString();
 
     const nuevaTarea = {
         nombre: name_task.value,
         fecha: date.value,
-        id: ID
+        id: ID,
+        importancia
     };
+
+    crearTarea(nuevaTarea, clase);
+
+    form.reset();
+}
+
+
+// Crea una nueva tarea
+const crearTarea = (tarea, clase) => {
+    const fragment = document.createDocumentFragment();
+    const tareaNueva = document.createElement('li');
+                tareaNueva.classList.add('task');
+                tareaNueva.setAttribute('data-tarea-id', tarea.id);
+                tareaNueva.innerHTML = `
+                    <p class="task-title">${tarea.nombre}</p>
+                    <p class="task-format">fecha establecida</p>
+                    <p class="task-date">${tarea.fecha}<p>                                        
+                `;               
+                const boton = document.createElement('button')
+                boton.classList.add('tarea-borrar', clase);
+                boton.textContent = 'Borrar';
+                // boton.onclick = borrarTarea;
+                tareaNueva.appendChild(boton);
+                fragment.appendChild(tareaNueva);
+
+    tasks.appendChild(fragment);
 }
 
 /*  EVENTS LISTENERS */
-form.addEventListener('submit', e=> {
-    e.preventDefault()
-    console.log('Desde el formulario');
-});
+let baja = true;
+let media = false;
+let alta = false;
+
+button_low.addEventListener('click', e => {
+    e.preventDefault();
+    baja = true;
+    media=false;
+    alta=false;
+})
+
+button_medium.addEventListener('click', e => {
+    e.preventDefault();
+    baja=false;
+    media = true;
+    alta=false;
+})
+
+button_high.addEventListener('click', e => {
+    e.preventDefault();
+    baja= false;
+    media=false;
+    alta = true;
+    
+})
+
+form.addEventListener('submit', agregarTarea );
 
 
