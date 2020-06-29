@@ -8,6 +8,8 @@ const form = document.getElementById('formulario');
 const alert = document.getElementById('alerta');
 const list_tasks = document.getElementById('tasks');
 
+let tareas = [];
+
 
 /*  FUNCIONES */
 
@@ -88,11 +90,19 @@ const crearTarea = (tarea, clase) => {
                 const boton = document.createElement('button')
                 boton.classList.add('tarea-borrar', clase);
                 boton.textContent = 'Borrar';
-                // boton.onclick = borrarTarea;
+                
                 tareaNueva.appendChild(boton);
                 fragment.appendChild(tareaNueva);
 
     tasks.appendChild(fragment);
+}
+
+// Agrega la tarea al localStorage
+const agregarLocalStorage = tarea => {
+    tareas = obtenerLocalStorage();
+    // Añade la nueva tarea
+    tareas.push(tarea);
+    localStorage.setItem('tareas', JSON.stringify(tareas));
 }
 
 /*  EVENTS LISTENERS */
