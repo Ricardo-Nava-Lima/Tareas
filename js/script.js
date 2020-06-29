@@ -90,7 +90,7 @@ const crearTarea = (tarea, clase) => {
                 const boton = document.createElement('button')
                 boton.classList.add('tarea-borrar', clase);
                 boton.textContent = 'Borrar';
-                
+                boton.onclick = borrarTarea;
                 tareaNueva.appendChild(boton);
                 fragment.appendChild(tareaNueva);
 
@@ -103,6 +103,23 @@ const agregarLocalStorage = tarea => {
     // Añade la nueva tarea
     tareas.push(tarea);
     localStorage.setItem('tareas', JSON.stringify(tareas));
+}
+
+// Elimina la tarea de la lista
+const borrarTarea = e => {
+    
+    e.target.parentElement.remove();
+
+    const id = (e.target.parentElement.getAttribute('data-tarea-id'));
+    borrarTareaLocalStorage(id);
+    
+}
+
+const borrarTareaLocalStorage = id => {
+    tareas = obtenerLocalStorage();
+    tareasNuevas = tareas.filter(tar => tar.id !== id)
+    
+    localStorage.setItem('tareas', JSON.stringify(tareasNuevas));
 }
 
 /*  EVENTS LISTENERS */
