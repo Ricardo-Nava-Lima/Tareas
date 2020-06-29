@@ -113,3 +113,42 @@ h1, p{
     outline: none;
     transition: background-color 1s ease;
 }
+
+.alerta{
+    display: fixed;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background-color: #8b0000;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+/*  ESTILOS PARA LAS TAREAS */
+.task{
+    width: 80%;
+    margin: 0 auto 15px;
+    text-align: center;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.task-title{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.task-date,
+.task-format{
+    opacity: .7;
+}
+.tarea-borrar{
+    border: none;
+    padding: .7rem;
+    width: 70%;
+    border-radius: 5px;
+}
