@@ -122,6 +122,29 @@ const borrarTareaLocalStorage = id => {
     localStorage.setItem('tareas', JSON.stringify(tareasNuevas));
 }
 
+// Obtenemos las tareas del localStorage
+
+const obtenerLocalStorage = () => {
+
+    if( localStorage.getItem('tareas') === null){
+        tareas = [];
+    }else{ 
+        tareas = JSON.parse(localStorage.getItem('tareas'));
+    }
+    return tareas;
+}
+
+// Obtiene el contenido del LocalStorage al cargar la página
+const contenidoLocalStorage = () => {
+
+    tareas = obtenerLocalStorage()
+
+    for(tarea of tareas){
+        const clase = tarea.importancia
+        crearTarea(tarea, clase);
+    }
+}
+
 /*  EVENTS LISTENERS */
 let baja = true;
 let media = false;
