@@ -11,20 +11,46 @@ const list_tasks = document.getElementById('tasks');
 
 /*  FUNCIONES */
 
+
+// En caso de error
+const mostrarError = mensaje => {
+    const error = document.createElement('p');
+    error.classList.add('alerta');
+    error.textContent = mensaje;
+    alerta.appendChild(error);
+    ocultarError();
+}
+
+const ocultarError = () => {
+    setTimeout(() => {
+        document.querySelector('.alerta').remove();
+    }, 2000);
+}
+
+// Agrega una nueva tarea
 const agregarTarea = e => {
     e.preventDefault();
 
     if(name_task.value.trim() === ''){
-        console.log('El nombre no debe estar vacío');
+        mostrarError('El nombre no debe estar vacío');
         return;
     }
     const actual = new Date().getTime();
     const fecha = new Date(date.value).getTime();
 
     if(fecha < actual || date.value === ''){
-        console.log('Ingresa una fecha válida');
+        mostrarError('Ingresa una fecha válida');
         return;
     }
+
+     // Genera un id único
+    const ID = Math.random().toString(36).substr(2, 9).toString();
+
+    const nuevaTarea = {
+        nombre: name_task.value,
+        fecha: date.value,
+        id: ID
+    };
 }
 
 /*  EVENTS LISTENERS */
