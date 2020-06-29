@@ -153,3 +153,36 @@ h1, p{
     width: 70%;
     border-radius: 5px;
 }
+
+
+/*  MEDIA QUERY */
+
+@media screen and (min-width: 768px){
+    .main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .formulario{
+        margin-top: 6rem;
+        height: 450px;
+    }
+
+    .form-submit:hover{
+        background-color: #292947;
+    }
+
+    .task:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .form-input-color:last-of-type{
+        margin-top: 0;
+    }
+    .form-input-color,
+    .form-submit,
+    .tarea-borrar:hover{
+        cursor: pointer;
+    }
+}
