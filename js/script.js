@@ -86,12 +86,12 @@ const crearTarea = (tarea, clase) => {
                 tareaNueva.classList.add('task');
                 tareaNueva.setAttribute('data-tarea-id', tarea.id);
                 tareaNueva.innerHTML = `
-                    <p class="task-title">${tarea.nombre}</p>
+                    <p class="task-title ${clase}">${tarea.nombre}</p>
                     <p class="task-format"><pre>   Año Mes Día Hr min</pre></p>
                     <p class="task-date">${tarea.fecha}<p>                                        
                 `;               
                 const boton = document.createElement('button')
-                boton.classList.add('tarea-borrar', clase);
+                boton.classList.add('task-delete');
                 boton.textContent = 'Borrar';
                 boton.onclick = borrarTarea;
                 tareaNueva.appendChild(boton);

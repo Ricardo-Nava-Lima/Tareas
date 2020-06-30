@@ -82,11 +82,12 @@ h1, p{
     margin-bottom: 10px;
 }
 
-.form-input-color:first-of-type, 
+/*  ESTILOS PARA LOS BOTONES DE IMPORTANCIA Y LAS TAREAS */
+.form-input-color:first-of-type,
 .low{
-    background-color: rgb(184, 179, 179);
-    border: 1px solid gray;
-    color: dimgray;
+    background-color: #a5d6a7;
+    border: 1px solid green;
+    color: darkgreen;
 }
 
 .form-input-color:nth-of-type(2),
@@ -98,7 +99,7 @@ h1, p{
 
 .form-input-color:last-of-type,
 .high{
-    background-color: rgb(255, 152, 152);
+    background-color: #ef9a9a;
     border: 1px solid red;
     color: darkred;
 }
@@ -128,6 +129,8 @@ h1, p{
     border-radius: 5px;
     padding: 1rem;
 }
+
+
 /*  ESTILOS PARA LAS TAREAS */
 
 .task{
@@ -136,13 +139,17 @@ h1, p{
     text-align: center;
     flex-direction: row;
     border-radius: 10px;
-    padding: 1rem;
-    background-color: white;
+    background-color: #fff;
 }
 
 .task-title{
     font-weight: 700;
     font-size: 1.2rem;
+    padding: 2rem;
+    margin-top: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
 }
 
 .task-date,
@@ -150,11 +157,12 @@ h1, p{
 .footer-input-color{
     opacity: .7;
 }
-.tarea-borrar{
+.task-delete{
     border: none;
     padding: .7rem;
     width: 70%;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 
@@ -176,16 +184,12 @@ h1, p{
     }
 
     .task:hover{
-        cursor: pointer;
         transform: scale(1.1);
     }
 
-    .form-input-color:last-of-type{
-        margin-top: 0;
-    }
     .form-input-color,
     .form-submit,
-    .tarea-borrar:hover{
+    .task-delete:hover{
         cursor: pointer;
     }
 }
